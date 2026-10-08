@@ -1,300 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#f4e4df" />
-  <meta name="description" content="Extended Muse — Luxury Hair, Timeless Beauty." />
-  <title>Extended Muse — Luxury Hair</title>
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            muse: {
-              cream: "#f8eeea",
-              blush: "#e7b1ad",
-              rose: "#c98786",
-              brown: "#684b49",
-              ink: "#332827",
-              line: "#ead5d0"
-            }
-          },
-          fontFamily: {
-            serifMuse: ["Cormorant Garamond", "Georgia", "serif"],
-            sansMuse: ["Montserrat", "Arial", "sans-serif"],
-            scriptMuse: ["Allura", "cursive"]
-          },
-          letterSpacing: {
-            muse: ".22em"
-          }
-        }
-      }
-    }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f8eeea"><meta name="description" content="Extended Muse — luxury hair, timeless beauty.">
+<title>Extended Muse | Luxury Hair</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{muse:{cream:"#f8eeea",blush:"#e7b1ad",rose:"#c98786",brown:"#684b49",ink:"#332827"}},fontFamily:{serifMuse:['Cormorant Garamond','Georgia','serif'],scriptMuse:['Allura','cursive']}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><script src="store.js" defer></script>
 </head>
-
-<body class="bg-muse-cream text-muse-ink font-sansMuse antialiased">
-
-  <!-- Shipping bar -->
-  <div class="shipping-bar">
-    <span>♡</span>
-    <span>FREE SHIPPING ON ORDERS OVER $100</span>
-    <span>♡</span>
-  </div>
-
-  <!-- Header -->
-  <header id="siteHeader" class="site-header">
-    <div class="header-inner">
-      <button class="icon-button desktop-search" data-open-search aria-label="Open search">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>
-      </button>
-
-      <button class="mobile-menu-button icon-button" data-open-menu aria-label="Open menu">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
-      </button>
-
-      <nav class="nav-left desktop-nav">
-        <a href="#home" class="nav-link active">HOME</a>
-        <a href="#shop" class="nav-link">SHOP</a>
-      </nav>
-
-      <a href="#home" class="brand" aria-label="Extended Muse home">
-        <span class="brand-mark">EM</span>
-        <span class="brand-name">EXTENDED MUSE</span>
-      </a>
-
-      <nav class="nav-right desktop-nav">
-        <a href="#about" class="nav-link">ABOUT</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
-      </nav>
-
-      <div class="header-actions">
-        <button class="icon-button" data-open-account aria-label="Account">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c.8-4.1 3.1-6.2 7-6.2s6.2 2.1 7 6.2"/></svg>
-        </button>
-        <button class="icon-button cart-button" data-open-cart aria-label="Shopping bag">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
-          <span id="cartCount" class="cart-count">0</span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile drawer -->
-  <div id="mobileMenu" class="drawer-overlay" aria-hidden="true">
-    <aside class="mobile-drawer">
-      <div class="drawer-top">
-        <span class="drawer-title">MENU</span>
-        <button class="icon-button" data-close-menu aria-label="Close menu">
-          <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
-        </button>
-      </div>
-      <nav class="mobile-nav">
-        <a href="#home">HOME</a>
-        <a href="#shop">SHOP</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-    </aside>
-  </div>
-
-  <!-- Search -->
-  <div id="searchPanel" class="search-panel" aria-hidden="true">
-    <div class="search-box">
-      <div class="search-heading">
-        <span>SEARCH EXTENDED MUSE</span>
-        <button class="icon-button" data-close-search aria-label="Close search">
-          <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
-        </button>
-      </div>
-      <div class="search-input-wrap">
-        <input id="searchInput" type="search" placeholder="Search bundles, wigs, closures..." autocomplete="off" />
-        <button class="search-submit" id="searchSubmit">SEARCH</button>
-      </div>
-      <p id="searchMessage" class="search-message"></p>
-    </div>
-  </div>
-
-  <main id="home">
-
-    <!-- Hero -->
-    <section class="hero-section">
-      <div class="hero-copy">
-        <p class="eyebrow">WELCOME TO</p>
-        <h1>EXTENDED MUSE</h1>
-        <p class="script-line">Luxury Hair, Timeless Beauty</p>
-        <span class="heart-line">♡</span>
-        <p class="hero-subtitle">PREMIUM QUALITY BUNDLES FOR<br class="hidden sm:block" /> THE MUSE IN YOU.</p>
-        <a href="#shop" class="primary-button">SHOP NOW <span>→</span></a>
-      </div>
-      <div class="hero-image" role="img" aria-label="Luxury black hair bundles with pink ribbons"></div>
-    </section>
-
-    <!-- Category cards -->
-    <section id="shop" class="categories section-shell">
-      <a class="category-card category-bundles" href="#products">
-        <div class="category-overlay"></div>
-        <div class="category-copy"><h2>BUNDLES</h2><span>SHOP →</span></div>
-      </a>
-      <a class="category-card category-closures" href="#products">
-        <div class="category-overlay"></div>
-        <div class="category-copy"><h2>FRONTALS &amp;<br />CLOSURES</h2><span>SHOP →</span></div>
-      </a>
-      <a class="category-card category-wigs" href="#products">
-        <div class="category-overlay"></div>
-        <div class="category-copy"><h2>WIGS</h2><span>SHOP →</span></div>
-      </a>
-      <a class="category-card category-care" href="#products">
-        <div class="category-overlay"></div>
-        <div class="category-copy"><h2>HAIR CARE</h2><span>SHOP →</span></div>
-      </a>
-    </section>
-
-    <!-- Benefits -->
-    <section class="benefits">
-      <div class="benefit"><svg viewBox="0 0 24 24"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7z"/><circle cx="7" cy="19" r="1.7"/><circle cx="18" cy="19" r="1.7"/></svg><div><strong>FAST SHIPPING</strong><span>GET YOUR ORDER QUICKLY</span></div></div>
-      <div class="benefit"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v5c0 5-3.3 8.4-8 10-4.7-1.6-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><div><strong>QUALITY GUARANTEED</strong><span>PREMIUM GRADE HAIR</span></div></div>
-      <div class="benefit"><svg viewBox="0 0 24 24"><path d="M20.5 9.2c0 5.7-8.5 11-8.5 11s-8.5-5.3-8.5-11A4.2 4.2 0 0 1 12 7.4a4.2 4.2 0 0 1 8.5 1.8Z"/></svg><div><strong>CUSTOMER SUPPORT</strong><span>WE'RE HERE TO HELP</span></div></div>
-      <div class="benefit"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><div><strong>SECURE PAYMENTS</strong><span>SHOP WITH CONFIDENCE</span></div></div>
-    </section>
-
-    <!-- Best sellers -->
-    <section id="products" class="best-sellers section-shell">
-      <div class="best-intro">
-        <div class="bow-decoration">⌁</div>
-        <p class="eyebrow">BEST SELLERS</p>
-        <p class="best-subtitle">OUR MOST LOVED COLLECTIONS</p>
-        <a href="#products-grid" class="primary-button small">SHOP ALL <span>→</span></a>
-      </div>
-
-      <div id="products-grid" class="products-grid">
-        <article class="product-card" data-name="straight bundles">
-          <button class="product-image product-straight" data-add-product="Straight Bundles">
-            <span class="quick-add">ADD TO BAG</span>
-          </button>
-          <h3>STRAIGHT BUNDLES</h3><p>$XXX</p>
-        </article>
-        <article class="product-card" data-name="body wave bundles">
-          <button class="product-image product-body" data-add-product="Body Wave Bundles">
-            <span class="quick-add">ADD TO BAG</span>
-          </button>
-          <h3>BODY WAVE BUNDLES</h3><p>$XXX</p>
-        </article>
-        <article class="product-card" data-name="deep wave bundles">
-          <button class="product-image product-deep" data-add-product="Deep Wave Bundles">
-            <span class="quick-add">ADD TO BAG</span>
-          </button>
-          <h3>DEEP WAVE BUNDLES</h3><p>$XXX</p>
-        </article>
-        <article class="product-card" data-name="curly bundles">
-          <button class="product-image product-curly" data-add-product="Curly Bundles">
-            <span class="quick-add">ADD TO BAG</span>
-          </button>
-          <h3>CURLY BUNDLES</h3><p>$XXX</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Lifestyle strip -->
-    <section class="lifestyle-strip">
-      <span>More than hair...</span>
-      <strong>IT'S A LIFESTYLE</strong>
-      <span>♥</span>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact" class="footer">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-mark">EM</div>
-          <span>EXTENDED MUSE</span>
-        </div>
-
-        <div>
-          <h4>QUICK LINKS</h4>
-          <a href="#home">Home</a>
-          <a href="#shop">Shop</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div>
-          <h4>CUSTOMER CARE</h4>
-          <a href="#contact">Shipping Policy</a>
-          <a href="#contact">Return Policy</a>
-          <a href="#contact">FAQ</a>
-          <a href="#contact">Track Order</a>
-        </div>
-
-        <div class="newsletter">
-          <h4>STAY CONNECTED</h4>
-          <p>Join our email list for exclusive offers,<br />new arrivals &amp; more!</p>
-          <form id="newsletterForm" class="newsletter-form">
-            <input id="newsletterEmail" type="email" placeholder="Enter your email" required />
-            <button type="submit" aria-label="Subscribe">→</button>
-          </form>
-          <p id="newsletterMessage" class="newsletter-message"></p>
-          <div class="socials">
-            <a href="#" aria-label="Instagram">◎</a>
-            <a href="#" aria-label="TikTok">♪</a>
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Pinterest">p</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 EXTENDED MUSE. ALL RIGHTS RESERVED.</span>
-        <span>──────── ♡ ────────</span>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Cart drawer -->
-  <div id="cartDrawer" class="drawer-overlay" aria-hidden="true">
-    <aside class="cart-drawer">
-      <div class="drawer-top">
-        <span class="drawer-title">YOUR BAG</span>
-        <button class="icon-button" data-close-cart aria-label="Close bag">
-          <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
-        </button>
-      </div>
-      <div id="cartItems" class="cart-items">
-        <p class="empty-cart">Your bag is currently empty.</p>
-      </div>
-      <div class="cart-footer">
-        <div><span>SUBTOTAL</span><strong id="cartSubtotal">$0</strong></div>
-        <button class="primary-button full" id="checkoutButton">CHECKOUT <span>→</span></button>
-        <p id="checkoutMessage" class="checkout-message"></p>
-      </div>
-    </aside>
-  </div>
-
-  <!-- Account modal -->
-  <div id="accountModal" class="modal-overlay" aria-hidden="true">
-    <div class="account-modal">
-      <button class="modal-close icon-button" data-close-account aria-label="Close account">
-        <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
-      </button>
-      <p class="eyebrow">EXTENDED MUSE</p>
-      <h2>WELCOME BACK</h2>
-      <p>Account sign-in will connect to your store backend when you are ready.</p>
-      <button class="primary-button full" data-close-account>CONTINUE <span>→</span></button>
-    </div>
-  </div>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<body>
+<div class="shipping-bar">♡ &nbsp; FREE SHIPPING ON ORDERS OVER $100 &nbsp; ♡</div>
+<header class="site-header"><div class="header-inner">
+<button class="icon-button mobile-only" data-menu aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+<button class="icon-button desktop-only" data-search aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 5 5"/></svg></button>
+<nav class="nav nav-left desktop-only"><a class="active" href="index.html">HOME</a><a href="shop.html">SHOP</a></nav>
+<a class="brand" href="index.html"><img src="assets/extended-muse-logo.jpg" alt="Extended Muse logo"></a>
+<nav class="nav nav-right desktop-only"><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a></nav>
+<div class="header-actions"><a class="icon-button desktop-only" href="account.html" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 21c.8-4.1 3.1-6.2 7-6.2s6.2 2.1 7 6.2"/></svg></a><a class="icon-button bag-link" href="cart.html" aria-label="Shopping bag"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" data-cart-count>0</span></a></div>
+</div></header>
+<div class="mobile-drawer" id="mobileDrawer" aria-hidden="true"><div class="drawer-top"><span>MENU</span><button class="icon-button" data-close-menu aria-label="Close menu">×</button></div><a href="index.html">HOME</a><a href="shop.html">SHOP ALL</a><a href="bundles.html">BUNDLES</a><a href="wigs.html">WIGS</a><a href="frontals.html">FRONTALS & CLOSURES</a><a href="hair-care.html">HAIR CARE</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a><a href="account.html">MY ACCOUNT</a></div>
+<div class="search-layer" id="searchLayer"><form class="search-card" action="shop.html"><button type="button" class="search-close" data-close-search aria-label="Close search">×</button><label for="searchQuery">SEARCH EXTENDED MUSE</label><div class="search-row"><input id="searchQuery" name="q" placeholder="Search bundles, wigs, closures…" required><button class="btn">SEARCH →</button></div></form></div>
+<main>
+<section class="hero"><div class="hero-copy"><p class="eyebrow">WELCOME TO</p><h1>EXTENDED MUSE</h1><p class="script">Luxury Hair, Timeless Beauty</p><span class="heart">♡</span><p class="hero-sub">PREMIUM QUALITY BUNDLES FOR<br>THE MUSE IN YOU.</p><a href="shop.html" class="btn">SHOP NOW <span>⟶</span></a></div><div class="hero-photo" role="img" aria-label="Luxury hair bundles"></div></section>
+<section class="category-grid shell">
+<a class="category category-bundles" href="bundles.html"><span>BUNDLES<small>SHOP →</small></span></a>
+<a class="category category-frontals" href="frontals.html"><span>FRONTALS &amp;<br>CLOSURES<small>SHOP →</small></span></a>
+<a class="category category-wigs" href="wigs.html"><span>WIGS<small>SHOP →</small></span></a>
+<a class="category category-care" href="hair-care.html"><span>HAIR CARE<small>SHOP →</small></span></a>
+</section>
+<section class="benefits"><div><b>♧</b><strong>FAST SHIPPING</strong><small>GET YOUR ORDER QUICKLY</small></div><div><b>◇</b><strong>QUALITY GUARANTEED</strong><small>PREMIUM GRADE HAIR</small></div><div><b>♡</b><strong>CUSTOMER SUPPORT</strong><small>WE'RE HERE TO HELP</small></div><div><b>▢</b><strong>SECURE PAYMENTS</strong><small>SHOP WITH CONFIDENCE</small></div></section>
+<section class="best-sellers shell"><div class="best-intro"><p class="eyebrow">BEST SELLERS</p><p>OUR MOST LOVED COLLECTIONS</p><a href="shop.html" class="btn small">SHOP ALL ⟶</a></div><div class="product-grid home-products" data-products="featured"></div></section>
+<section class="lifestyle"><span>More than hair...</span><strong>IT'S A LIFESTYLE</strong><b>♥</b></section>
+</main>
+<footer class="footer"><div class="footer-grid"><a class="footer-logo" href="index.html"><img src="assets/extended-muse-logo.jpg" alt="Extended Muse"><span>EXTENDED MUSE</span></a><div><h3>QUICK LINKS</h3><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><div><h3>CUSTOMER CARE</h3><a href="shipping.html">Shipping Policy</a><a href="returns.html">Return Policy</a><a href="faq.html">FAQ</a><a href="contact.html">Contact Us</a></div><div class="newsletter"><h3>STAY CONNECTED</h3><p>Join our email list for exclusive offers,<br>new arrivals &amp; more!</p><form data-newsletter><input type="email" placeholder="Enter your email" required><button aria-label="Subscribe">→</button></form><small class="form-message" aria-live="polite"></small><div class="socials"><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="TikTok">♪</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Pinterest">p</a></div></div></div><div class="footer-bottom">© 2026 EXTENDED MUSE. ALL RIGHTS RESERVED. <span>──────── ♡ ────────</span></div></footer>
+<div class="toast" role="status" aria-live="polite"></div>
+</body></html>
